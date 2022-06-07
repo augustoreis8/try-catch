@@ -31,12 +31,14 @@ function clickNumbersButton() {
     try {
         if (numbers == '') throw 'Informe um valor';
 
-        if (numbers < 5 || numbers > 10) throw 'Informe um valor maior que 5 e menor que 10'
+        if (numbers < 6 || numbers > 9) throw 'Informe um valor maior que 5 e menor que 10';
+
+        if (numbers > 5 || numbers < 10) throw '';
     }
     catch (erro) {
         document.getElementById("outputnumbers").innerHTML = erro;
     }
     finally {
-        alert("o numero escolhido foi: " + numbers);
+        alert("O numero escolhido foi:  " + numbers);
     }
 }
