@@ -26,17 +26,21 @@ function clickFileButton() {
 }
 
 function clickNumbersButton() {
+
+    document.getElementById("outputnumbers").innerHTML = " ";
     numbers = document.getElementById("inputnumbers").value
+    numbers = Number(numbers);
+    console.log(typeof numbers);
 
     try {
         if (numbers == '') throw 'Informe um valor';
 
-        if (numbers < 6 || numbers > 9) throw 'Informe um valor maior que 5 e menor que 10';
+        if (numbers <= 5 || numbers >= 10) throw 'Informe um valor maior que 5 e menor que 10';
 
-        if (numbers > 5 || numbers < 10) throw '';
     }
     catch (erro) {
         document.getElementById("outputnumbers").innerHTML = erro;
+        console.log("Erro " + erro);
     }
     finally {
         alert("O numero escolhido foi:  " + numbers);
